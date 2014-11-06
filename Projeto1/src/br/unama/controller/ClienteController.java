@@ -9,7 +9,7 @@ import javax.faces.bean.SessionScoped;
 
 import br.unama.entidade.Cliente;
 
-//TESTE
+//TESTE do eclipse
 
 @ManagedBean
 @SessionScoped
