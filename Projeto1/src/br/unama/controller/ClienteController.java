@@ -9,6 +9,8 @@ import javax.faces.bean.SessionScoped;
 
 import br.unama.entidade.Cliente;
 
+//TESTE
+
 @ManagedBean
 @SessionScoped
 public class ClienteController {
