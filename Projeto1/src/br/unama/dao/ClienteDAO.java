@@ -23,15 +23,13 @@ public class ClienteDAO {
 	public int inserirContato(Cliente c) throws SQLException {
 
 		try {
-			String sql = "insert into cliente (nome, email, cpf, data_nascimento) "
-					+ " values (?, ?, ?, ?) ";
+			String sql = "insert into cliente (nome) "
+					+ " values (?) ";
 
 			PreparedStatement ps = bd.getConexao().prepareStatement(sql);
 
 			ps.setString(1, c.getNomeCliente());
-			ps.setString(2, c.getEmail());
-			ps.setString(3, c.getEndereco());
-			ps.setDate(4, new Date(c.getDataNascimento().getInstance().getTimeInMillis()));
+			
 			
 			return ps.executeUpdate();
 

@@ -18,11 +18,11 @@
 		<p:dataTable value="#{clienteController.listaCliente}" 
 			var="cliente">
 
-			<p:column>
+			<p:column headerText="Código">
 				<h:outputText value="#{cliente.codCliente}" />
 			</p:column>
 
-			<p:column>
+			<p:column headerText="Nome">
 				<h:outputText value="#{cliente.nomeCliente}" />
 			</p:column>
 
