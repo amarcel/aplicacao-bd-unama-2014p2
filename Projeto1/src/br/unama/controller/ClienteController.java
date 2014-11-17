@@ -23,10 +23,7 @@ public class ClienteController {
 
 	@PostConstruct
 	public void carregarListaClientes() {
-		for (int i = 1; i <= 10; i++) {
-			Cliente c = new Cliente(i, "Cliente #" + i);
-			listaCliente.add(c);
-		}
+		
 	}
 
 	public List<Cliente> getListaCliente() {

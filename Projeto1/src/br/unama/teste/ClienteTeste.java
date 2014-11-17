@@ -13,6 +13,9 @@ public class ClienteTeste {
 	public void deveInserirContato() {
 		Cliente c = new Cliente();
 		c.setNomeCliente("Kelly Key");
+		c.setEmailCliente("kkey@gmail.com");
+		c.setCpfCliente("09189013491");
+		c.setSexoCliente("F");
 
 		ClienteDAO dao = new ClienteDAO();
 

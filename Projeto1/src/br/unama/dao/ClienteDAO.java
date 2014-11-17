@@ -1,6 +1,5 @@
 package br.unama.dao;
 
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -23,12 +22,15 @@ public class ClienteDAO {
 	public int inserirContato(Cliente c) throws SQLException {
 
 		try {
-			String sql = "insert into cliente (nome) "
-					+ " values (?) ";
+			String sql = "insert into cliente (nome, cpf, email, sexo) "
+					+ " values (?, ?, ?, ?) ";
 
 			PreparedStatement ps = bd.getConexao().prepareStatement(sql);
 
 			ps.setString(1, c.getNomeCliente());
+			ps.setString(2, c.getCpfCliente());
+			ps.setString(3, c.getEmailCliente());
+			ps.setString(4, c.getSexoCliente());
 			
 			
 			return ps.executeUpdate();

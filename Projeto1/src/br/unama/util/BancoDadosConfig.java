@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class BancoDadosConfig {
 	
 	static final String JDBC_DRIVER = "org.postgresql.Driver";
-	static final String JDBC_BD = "loja";
+	//static final String JDBC_BD = "loja";
 	//static final String JDBC_URL = "jdbc:postgresql://localhost:5432/"+JDBC_BD;
 
 	//Credenciais Banco de Dados Local
@@ -17,9 +17,10 @@ public class BancoDadosConfig {
 	//static final String PASS_BD = "postgres";
 
 	//Credenciais Banco de Dados Remoto
-	static final String USER_BD = "striketec2";
-	static final String PASS_BD = "unama";	
-	static final String JDBC_URL = "jdbc:postgresql://pgsql.striketec.com.br:5432/striketec2";
+	static final String JDBC_BD = "striketec3";
+	static final String USER_BD = "striketec3";
+	static final String PASS_BD = "unama6";	
+	static final String JDBC_URL = "jdbc:postgresql://pgsql.striketec.com.br:5432/"+JDBC_BD;
 
 	private Connection con;
 	
