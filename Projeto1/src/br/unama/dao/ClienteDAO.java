@@ -1,7 +1,10 @@
 package br.unama.dao;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.unama.entidade.Cliente;
 import br.unama.util.BancoDadosConfig;
@@ -40,6 +43,36 @@ public class ClienteDAO {
 			return -1;
 		}
 
+	}
+
+	public List<Cliente> selecionarClientes() {
+		
+		try {
+			List<Cliente> listaCliente = 
+					new ArrayList<Cliente>();
+			String sql = "select * from cliente";
+			PreparedStatement ps = 
+					bd.getConexao().prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()){
+				Cliente c = new Cliente(rs.getInt("cliente_id"), 
+						rs.getString("nome"),
+						rs.getString("cpf"),
+						rs.getString("email"),
+						rs.getString("sexo"));
+				
+				listaCliente.add(c);
+				
+			}//fim do while
+			
+			return listaCliente;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
 	}
 
 }

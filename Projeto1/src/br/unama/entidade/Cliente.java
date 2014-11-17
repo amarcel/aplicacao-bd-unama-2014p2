@@ -1,5 +1,10 @@
 package br.unama.entidade;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import br.unama.dao.ClienteDAO;
+
 public class Cliente {
 
 	private Integer codCliente;
@@ -8,7 +13,13 @@ public class Cliente {
 	private String emailCliente;
 	private String sexoCliente;
 	
-	public Cliente() { }
+	private ClienteDAO dao;
+	
+	public Cliente() {
+		
+		dao = new ClienteDAO();
+		
+	}
 	
 	public Cliente(Integer codCliente, String nomeCliente, String cpfCliente,
 			String emailCliente, String sexoCliente) {
@@ -18,6 +29,22 @@ public class Cliente {
 		this.emailCliente = emailCliente;
 		this.sexoCliente = sexoCliente;
 	}
+	
+	public List<Cliente> selecionarClientes() {
+		try {
+			List<Cliente> listaCliente = 
+					new ArrayList<Cliente>();
+			
+			listaCliente = dao.selecionarClientes();
+			
+			return listaCliente;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
 
 
 
@@ -25,25 +52,17 @@ public class Cliente {
 		return codCliente;
 	}
 
-
-
 	public void setCodCliente(Integer codCliente) {
 		this.codCliente = codCliente;
 	}
-
-
 
 	public String getNomeCliente() {
 		return nomeCliente;
 	}
 
-
-
 	public void setNomeCliente(String nomeCliente) {
 		this.nomeCliente = nomeCliente;
 	}
-
-
 
 	public String getCpfCliente() {
 		return cpfCliente;
@@ -68,6 +87,8 @@ public class Cliente {
 	public void setSexoCliente(String sexoCliente) {
 		this.sexoCliente = sexoCliente;
 	}
+
+	
 
 
 

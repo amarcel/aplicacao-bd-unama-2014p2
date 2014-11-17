@@ -21,11 +21,12 @@ public class ClienteController {
 	private Cliente cliente;
 
 	public ClienteController() {
+		cliente = new Cliente();
 	}
 
 	@PostConstruct
 	public void carregarListaClientes() {
-		
+		listaCliente = cliente.selecionarClientes();
 	}
 	
 	public void inserirCliente(){
