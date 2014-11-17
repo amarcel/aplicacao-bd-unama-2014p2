@@ -13,7 +13,32 @@
 
 <h:body>
 
-	<p:panel header="Lista de Clientes:">
+	<p:panel header="Gerenciar Clientes">
+	
+		<p:panelGrid columns="2">
+			<p:outputLabel value="Nome:" />
+			<p:inputText value="#{clienteController.cliente.nomeCliente}" />
+			<p:outputLabel value="CPF:" />
+			<p:inputText value="#{clienteController.cliente.cpfCliente}" />
+			<p:outputLabel value="E-mail:" />
+			<p:inputText value="#{clienteController.cliente.emailCliente}" />
+			
+			<p:outputLabel value="Sexo:" />
+			<p:selectOneRadio value="#{clienteController.cliente.sexoCliente}">
+				<f:selectItem itemLabel="Masculino" itemValue="M"/>
+				<f:selectItem itemLabel="Feminino" itemValue="F"/>
+			</p:selectOneRadio>
+			
+			<p:outputLabel value="Ações:" />
+			
+			<p:panelGrid columns="2">
+				<p:commandButton value="Inserir" 
+					actionListener="#{clienteController.inserirCliente}" />
+				<p:commandButton value="Atualizar" 
+					actionListener="#{clienteController.atualizarCliente}"/>
+			</p:panelGrid>
+			
+		</p:panelGrid>
 
 		<p:dataTable value="#{clienteController.listaCliente}" 
 			var="cliente">

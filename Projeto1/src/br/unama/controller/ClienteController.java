@@ -17,12 +17,21 @@ public class ClienteController {
 
 	private List<Cliente> listaCliente = 
 			new ArrayList<Cliente>();
+	
+	private Cliente cliente;
 
 	public ClienteController() {
 	}
 
 	@PostConstruct
 	public void carregarListaClientes() {
+		
+	}
+	
+	public void inserirCliente(){
+		
+	}
+	public void atualizarCliente(){
 		
 	}
 
@@ -33,6 +42,16 @@ public class ClienteController {
 	public void setListaCliente(List<Cliente> listaCliente) {
 		this.listaCliente = listaCliente;
 	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	
+	
 	
 }
 
